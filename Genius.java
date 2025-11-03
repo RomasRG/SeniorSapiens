@@ -1,10 +1,13 @@
 import java.util.ArrayList;
 import java.awt.*;
+import java.util.Random;
 
 public class Genius extends Jogo{
 
     private ArrayList<TipoCor> sequencia;
     private int indiceSequencia;
+    private Random random;
+    private TipoCor[] todasAsCores = TipoCor.values();
 
     private TelaGenius telaGenius;
     
@@ -32,6 +35,7 @@ public class Genius extends Jogo{
 
         this.sequencia = new ArrayList<>();
         this.indiceSequencia = 0;
+        this.random = new Random();
 
         this.telaGenius = new TelaGenius(this);
         this.telaGenius.setVisible(true);
@@ -63,7 +67,17 @@ public class Genius extends Jogo{
 
     public void proximoTurno(){
 
-        
+        int numeroDeCores = todasAsCores.length;
+
+        int indiceAleatorio = random.nextInt(numeroDeCores);
+
+        TipoCor corAleatoria = todasAsCores[indiceAleatorio];
+
+        sequencia.add(corAleatoria);
+
+        indiceSequencia = 0;
+
+        telaGenius.mostrarSequencia(sequencia);
 
     }
 

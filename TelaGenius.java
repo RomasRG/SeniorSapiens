@@ -25,7 +25,7 @@ public class TelaGenius extends JFrame{
 
         // ---- Timer ----
 
-        timerSequencia = new Timer(400, e -> executarPassoDaSequencia());
+        timerSequencia = new Timer(750, e -> executarPassoDaSequencia());
         timerSequencia.setRepeats(true);
 
         // ---- Botão Vermelho ----
@@ -106,7 +106,7 @@ public class TelaGenius extends JFrame{
 
         botao.setBackground(cor.corDestaque);
 
-        Timer timerPiscada = new Timer(250, event ->{
+        Timer timerPiscada = new Timer(375, event ->{
             botao.setBackground(cor.corBase);
         });
 

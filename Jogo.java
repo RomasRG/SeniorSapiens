@@ -2,14 +2,11 @@ public abstract class Jogo {
 
     protected Usuario jogador;
     protected int pontuacaoFinal;
+    protected Main mainApp;
 
     //==========================================================
     
     public abstract void iniciar();
-
-    //==========================================================
-
-    public abstract void jogar();
 
     //==========================================================
 
@@ -22,6 +19,14 @@ public abstract class Jogo {
         return pontuacaoFinal;
 
     }
+
+    public void setMainApp(Main main){
+
+        this.mainApp = main;
+
+    }
+
+    
 
     
 }
