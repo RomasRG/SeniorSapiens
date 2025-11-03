@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.awt.*;
 import java.util.Random;
+import javax.swing.Timer;
 
 public class Genius extends Jogo{
 
@@ -39,6 +40,8 @@ public class Genius extends Jogo{
 
         this.telaGenius = new TelaGenius(this);
         this.telaGenius.setVisible(true);
+
+        proximoTurno();
 
     }
 
@@ -105,6 +108,18 @@ public class Genius extends Jogo{
     }
 
     //==========================================================
+
+    public void recomecarJogo(){
+
+        sequencia.clear();
+        indiceSequencia = 0;
+        pontuacaoFinal = 0;
+
+        Timer delayNovoJogo = new Timer(1000, e -> proximoTurno());
+        delayNovoJogo.setRepeats(false);
+        delayNovoJogo.start();
+
+    }
     
 }
 

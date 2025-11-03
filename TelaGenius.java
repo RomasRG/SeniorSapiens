@@ -12,6 +12,7 @@ public class TelaGenius extends JFrame{
     private int indiceSequenciaAtual;
     private Timer timerSequencia;
     private boolean piscando;
+    private Font fonteDosBotoes = new Font("Arial", Font.BOLD, 24);
 
     public TelaGenius(Genius logicaGenius){
 
@@ -20,7 +21,8 @@ public class TelaGenius extends JFrame{
         // ---- Configuração Janela ----
 
         setSize(600, 600);
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        setLocationRelativeTo(null);
         setLayout(new GridLayout(2, 2));
 
         // ---- Timer ----
@@ -30,7 +32,8 @@ public class TelaGenius extends JFrame{
 
         // ---- Botão Vermelho ----
         botaoVermelho = new JButton("Vermelho");
-        botaoVermelho.setBackground(Color.RED);
+        botaoVermelho.setFont(fonteDosBotoes);
+        botaoVermelho.setBackground(Genius.TipoCor.Vermelho.corBase);
         botoesMap.put(Genius.TipoCor.Vermelho, botaoVermelho);
 
         botaoVermelho.addActionListener(event -> {
@@ -42,7 +45,8 @@ public class TelaGenius extends JFrame{
 
         // ---- Botão Azul ----
         botaoAzul = new JButton("Azul");
-        botaoAzul.setBackground(Color.BLUE);
+        botaoAzul.setFont(fonteDosBotoes);
+        botaoAzul.setBackground(Genius.TipoCor.Azul.corBase);
         botoesMap.put(Genius.TipoCor.Azul, botaoAzul);
 
         botaoAzul.addActionListener(event -> {
@@ -54,7 +58,8 @@ public class TelaGenius extends JFrame{
 
         // ---- Botão Amarelo ----
         botaoAmarelo = new JButton("Amarelo");
-        botaoAmarelo.setBackground(Color.YELLOW);
+        botaoAmarelo.setFont(fonteDosBotoes);
+        botaoAmarelo.setBackground(Genius.TipoCor.Amarelo.corBase);
         botoesMap.put(Genius.TipoCor.Amarelo, botaoAmarelo);
 
         botaoAmarelo.addActionListener(event -> {
@@ -66,7 +71,8 @@ public class TelaGenius extends JFrame{
 
         // ---- Botão Verde ----
         botaoVerde = new JButton("Verde");
-        botaoVerde.setBackground(Color.GREEN);
+        botaoVerde.setFont(fonteDosBotoes);
+        botaoVerde.setBackground(Genius.TipoCor.Verde.corBase);
         botoesMap.put(Genius.TipoCor.Verde, botaoVerde);
 
         botaoVerde.addActionListener(event -> {
@@ -75,6 +81,26 @@ public class TelaGenius extends JFrame{
         });
 
         add(botaoVerde);
+
+        JButton botaoRecomecar = new JButton("Recomeçar");
+        botaoRecomecar.setFont(fonteDosBotoes);
+        botaoRecomecar.addActionListener(event -> {
+            recomecarJogo();
+        });
+
+        add(botaoRecomecar);
+
+        setBotoesHabilitados(false);
+
+        // ---- Sair ----
+        addWindowListener(new java.awt.event.WindowAdapter() {
+
+        public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+
+        logicaGenius.finalizar();
+
+    }
+});
 
     }
 
@@ -150,6 +176,12 @@ public class TelaGenius extends JFrame{
             indiceSequenciaAtual++;
 
         }
+
+    }
+
+    private void recomecarJogo(){
+
+        logicaGenius.recomecarJogo();
 
     }
     

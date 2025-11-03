@@ -1,10 +1,11 @@
 import javax.swing.*;
+import java.awt.*;
 
 public class Main extends JFrame{
 
-    private static JFrame menuPrincipal;
-    private static boolean logado = true;
-    private static JButton botaoGenius;
+    private JFrame menuPrincipal;
+    private boolean logado = true;
+    private Font fonteDosBotoes = new Font("Arial", Font.BOLD, 24);
 
     //==========================================================
     public static void main(String[] args) {
@@ -15,12 +16,22 @@ public class Main extends JFrame{
 
     public Main(){
 
-        botaoGenius = new JButton("botaoGenius");
+        menuPrincipal = new JFrame("Menu");
+        menuPrincipal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        menuPrincipal.setSize(400, 300);
+        menuPrincipal.setLocationRelativeTo(null);
+        menuPrincipal.setLayout(new FlowLayout());
+        
+        
+
+        JButton botaoGenius = new JButton("Genius");
+        botaoGenius.setFont(fonteDosBotoes);
         botaoGenius.addActionListener(event -> {
             
             executarJogo(new Genius());
 
         });
+        menuPrincipal.add(botaoGenius);
 
         menuPrincipal.setVisible(true);
 
