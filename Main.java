@@ -21,8 +21,6 @@ public class Main extends JFrame{
         menuPrincipal.setSize(400, 300);
         menuPrincipal.setLocationRelativeTo(null);
         menuPrincipal.setLayout(new FlowLayout());
-        
-        
 
         JButton botaoGenius = new JButton("Genius");
         botaoGenius.setFont(fonteDosBotoes);
