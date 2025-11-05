@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import javax.swing.*;
+import javax.swing.border.Border;
+
 import java.awt.*;
 import java.util.Map;
 import java.util.HashMap;
@@ -15,6 +17,9 @@ public class TelaGenius extends JFrame{
     private Font fonteDosBotoes = new Font("Arial", Font.BOLD, 24);
     private Genius logicaGenius;
 
+    private JPanel painelJogo = new JPanel(new GridLayout(2, 2));
+    private JPanel painelRecomecar = new JPanel(new FlowLayout());
+
     public TelaGenius(Genius logicaGenius){
 
         super("Genius");
@@ -25,7 +30,7 @@ public class TelaGenius extends JFrame{
         setSize(600, 600);
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         setLocationRelativeTo(null);
-        setLayout(new GridLayout(2, 2));
+        setLayout(new BorderLayout());
 
         // ---- Timer ----
 
@@ -43,7 +48,7 @@ public class TelaGenius extends JFrame{
             logicaGenius.compararClique(Genius.TipoCor.Vermelho);
         });
 
-        add(botaoVermelho);
+        painelJogo.add(botaoVermelho);
 
         // ---- Botão Azul ----
         botaoAzul = new JButton("Azul");
@@ -56,7 +61,7 @@ public class TelaGenius extends JFrame{
             logicaGenius.compararClique(Genius.TipoCor.Azul);
         });
 
-        add(botaoAzul);
+        painelJogo.add(botaoAzul);
 
         // ---- Botão Amarelo ----
         botaoAmarelo = new JButton("Amarelo");
@@ -69,7 +74,7 @@ public class TelaGenius extends JFrame{
             logicaGenius.compararClique(Genius.TipoCor.Amarelo);
         });
 
-        add(botaoAmarelo);
+        painelJogo.add(botaoAmarelo);
 
         // ---- Botão Verde ----
         botaoVerde = new JButton("Verde");
@@ -82,7 +87,7 @@ public class TelaGenius extends JFrame{
             logicaGenius.compararClique(Genius.TipoCor.Verde);
         });
 
-        add(botaoVerde);
+        painelJogo.add(botaoVerde);
 
         JButton botaoRecomecar = new JButton("Recomeçar");
         botaoRecomecar.setFont(fonteDosBotoes);
@@ -90,8 +95,10 @@ public class TelaGenius extends JFrame{
             recomecarJogo();
         });
 
-        add(botaoRecomecar);
+        painelRecomecar.add(botaoRecomecar);
 
+        add(painelJogo, BorderLayout.CENTER);
+        add(painelRecomecar, BorderLayout.SOUTH);
         setBotoesHabilitados(false);
 
         // ---- Sair ----
