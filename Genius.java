@@ -49,7 +49,11 @@ public class Genius extends Jogo{
 
     public void finalizar(){
 
-        //Salvar pontuação no BD
+        //Salvar pontuação no BD-------------------------------------------
+        //Salvar pontuação no BD-------------------------------------------
+        //Salvar pontuação no BD-------------------------------------------
+        //Salvar pontuação no BD-------------------------------------------
+        //Salvar pontuação no BD-------------------------------------------
 
         if(telaGenius != null){
 

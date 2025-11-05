@@ -31,6 +31,24 @@ public class Main extends JFrame{
         });
         menuPrincipal.add(botaoGenius);
 
+        JButton botaoBingo = new JButton("Bingo");
+        botaoBingo.setFont(fonteDosBotoes);
+        botaoBingo.addActionListener(event -> {
+            
+            executarJogo(new Bingo());
+
+        });
+        menuPrincipal.add(botaoBingo);
+
+        JButton botaoJogoDaMemoria = new JButton("Jogo da Memória");
+        botaoJogoDaMemoria.setFont(fonteDosBotoes);
+        botaoJogoDaMemoria.addActionListener(event -> {
+            
+            executarJogo(new JogoDaMemoria());
+
+        });
+        menuPrincipal.add(botaoJogoDaMemoria);
+
         menuPrincipal.setVisible(true);
 
     }

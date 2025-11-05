@@ -13,10 +13,12 @@ public class TelaGenius extends JFrame{
     private Timer timerSequencia;
     private boolean piscando;
     private Font fonteDosBotoes = new Font("Arial", Font.BOLD, 24);
+    private Genius logicaGenius;
 
     public TelaGenius(Genius logicaGenius){
 
         super("Genius");
+        this.logicaGenius = logicaGenius;
 
         // ---- Configuração Janela ----
 
