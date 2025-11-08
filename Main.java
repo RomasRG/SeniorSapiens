@@ -5,7 +5,7 @@ public class Main extends JFrame{
 
     private JFrame menuPrincipal;
     private boolean logado = true;
-    private Font fonteDosBotoes = new Font("Arial", Font.BOLD, 24);
+    private Font fontePadrao = new Font("Arial", Font.BOLD, 24);
 
     //==========================================================
     public static void main(String[] args) {
@@ -23,7 +23,7 @@ public class Main extends JFrame{
         menuPrincipal.setLayout(new FlowLayout());
 
         JButton botaoGenius = new JButton("Genius");
-        botaoGenius.setFont(fonteDosBotoes);
+        botaoGenius.setFont(fontePadrao);
         botaoGenius.addActionListener(event -> {
             
             executarJogo(new Genius());
@@ -32,7 +32,7 @@ public class Main extends JFrame{
         menuPrincipal.add(botaoGenius);
 
         JButton botaoBingo = new JButton("Bingo");
-        botaoBingo.setFont(fonteDosBotoes);
+        botaoBingo.setFont(fontePadrao);
         botaoBingo.addActionListener(event -> {
             
             executarJogo(new Bingo());
@@ -41,7 +41,7 @@ public class Main extends JFrame{
         menuPrincipal.add(botaoBingo);
 
         JButton botaoJogoDaMemoria = new JButton("Jogo da Memória");
-        botaoJogoDaMemoria.setFont(fonteDosBotoes);
+        botaoJogoDaMemoria.setFont(fontePadrao);
         botaoJogoDaMemoria.addActionListener(event -> {
             
             executarJogo(new JogoDaMemoria());
