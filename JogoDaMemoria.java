@@ -183,6 +183,7 @@ public class JogoDaMemoria extends Jogo{
 
                     if(paresEncontrados == 8){
 
+                        rodadasCompletas++;
                         telaJogoDaMemoria.mostrarDialogoVitoria();
 
                     } else {
