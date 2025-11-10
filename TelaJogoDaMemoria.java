@@ -42,8 +42,8 @@ public class TelaJogoDaMemoria extends JFrame{
 
         // ---- Figuras ----
 
-        URL urlCostas = getClass().getResource(pastaDasImagens + "costas.png"); // (ou o nome do seu arquivo)
-        if(urlCostas == null) { throw new RuntimeException("Não foi possível encontrar a imagem: costas.png"); }
+        URL urlCostas = getClass().getResource(pastaDasImagens + "Costas.png"); // (ou o nome do seu arquivo)
+        if(urlCostas == null) { throw new RuntimeException("Não foi possível encontrar a imagem: Costas.png"); }
         iconeCostas = new ImageIcon(urlCostas);
 
         for(JogoDaMemoria.TipoFigura figura : JogoDaMemoria.TipoFigura.values()){
