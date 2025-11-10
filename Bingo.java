@@ -7,7 +7,7 @@ public class Bingo extends Jogo{
     }
 
     public void iniciar(){
-
+        Cartela cartela = new Cartela();
 
 
     }
