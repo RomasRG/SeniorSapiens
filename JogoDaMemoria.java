@@ -1,7 +1,5 @@
 import java.util.ArrayList;
-import java.awt.*;
 import java.util.Random;
-import javax.swing.JButton;
 import javax.swing.Timer;
 
 public class JogoDaMemoria extends Jogo{

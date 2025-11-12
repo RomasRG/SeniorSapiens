@@ -15,10 +15,6 @@ public class RankingDAO {
 
     //==========================================================
 
-    public List<Usuario> getRankingJogo(String nomeJogo){
-
-        
-
-    }
+    //public List<Usuario> getRankingJogo(String nomeJogo){}
     
 }
