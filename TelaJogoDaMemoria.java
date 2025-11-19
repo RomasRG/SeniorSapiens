@@ -196,10 +196,10 @@ public class TelaJogoDaMemoria extends JFrame{
 
     //==========================================================
 
-    public void atualizaPlacar(int movimentos, int paresEncontrados, int rodadasCompletas){
+    public void atualizaPlacar(int movimentos, int paresTotais){
 
         this.labelMovimentos.setText("Movimentos: " + movimentos);
-        this.labelParesEncontrados.setText("Pares Completos: " + ((rodadasCompletas * 8) + paresEncontrados));
+        this.labelParesEncontrados.setText("Pares Completos: " + paresTotais);
 
     }
 

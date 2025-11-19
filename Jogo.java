@@ -1,6 +1,6 @@
 public abstract class Jogo {
 
-    protected Usuario jogador;
+    protected Pessoa jogador;
     protected int pontuacaoFinal;
     protected Main mainApp;
 
