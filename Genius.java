@@ -11,7 +11,7 @@ public class Genius extends Jogo{
     private TipoCor[] todasAsCores = TipoCor.values();
 
     private TelaGenius telaGenius;
-    private BancoDeDados bancoDeDados;
+    private BancoDeDados bancoDeDados = new BancoDeDados();
     
     public enum TipoCor{
 

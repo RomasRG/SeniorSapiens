@@ -14,7 +14,7 @@ public class JogoDaMemoria extends Jogo{
     private int paresTotais;
 
     private TelaJogoDaMemoria telaJogoDaMemoria;
-    private BancoDeDados bancoDeDados;
+    private BancoDeDados bancoDeDados = new BancoDeDados();
 
     public enum TipoFigura{
 
@@ -210,7 +210,7 @@ public class JogoDaMemoria extends Jogo{
 
             }
 
-            telaJogoDaMemoria.atualizaPlacar(movimentosTotais, paresTotais);
+            telaJogoDaMemoria.atualizaPlacar(movimentosRodada, paresRodada);
         }
 
     }

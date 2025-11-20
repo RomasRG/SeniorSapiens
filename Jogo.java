@@ -1,6 +1,6 @@
 public abstract class Jogo {
 
-    protected Pessoa jogador;
+    protected Pessoa jogador = new Pessoa();
     protected int pontuacaoFinal;
     protected Main mainApp;
 
