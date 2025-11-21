@@ -12,7 +12,12 @@ public class Cartela {
     public Cartela(){
         this.numeros = new int[5][5];
         this.marcados = new boolean[5][5];
+        this.random = new Random();
         gerarCartela();
+    }
+    
+    public int[][] getNumeros(){
+        return numeros;
     }
     
     //==========================================================

@@ -1,25 +1,23 @@
 public class Bingo extends Jogo{
+    private BingoUI bingo;
 
-    public void marcar(){
-
-
-
-    }
 
     public void iniciar(){
-        Cartela cartela = new Cartela();
-
-
-    }
-
-    public void jogar(){
-
-
-
+        this.bingo = new BingoUI(this);
+        this.bingo.setVisible(true);
     }
 
     public void finalizar(){
+        if(bingo != null){
 
+            bingo.dispose();
+
+        }
+        if(mainApp != null){
+
+            mainApp.exibirMenuPrincipal();
+
+        }
 
         
     }
