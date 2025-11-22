@@ -1,9 +1,9 @@
 public class Bingo extends Jogo{
-    private BingoUI bingo;
+    private TelaBingo bingo;
 
 
     public void iniciar(){
-        this.bingo = new BingoUI(this);
+        this.bingo = new TelaBingo(this);
         this.bingo.setVisible(true);
     }
 

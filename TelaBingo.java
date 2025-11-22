@@ -1,12 +1,12 @@
-public class BingoUI extends javax.swing.JFrame {
+public class TelaBingo extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(BingoUI.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TelaBingo.class.getName());
     private Cartela cartela;
     private Bingo controle;
     /**
      * Creates new form NewJFrame
      */
-    public BingoUI(Bingo controle) {
+    public TelaBingo(Bingo controle) {
         this.controle = controle;
         
         initComponents();
