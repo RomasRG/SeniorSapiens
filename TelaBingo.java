@@ -1,13 +1,10 @@
 public class TelaBingo extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TelaBingo.class.getName());
     private Cartela cartela;
-    private Bingo controle;
     /**
      * Creates new form NewJFrame
      */
     public TelaBingo(Bingo controle) {
-        this.controle = controle;
         
         initComponents();
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
