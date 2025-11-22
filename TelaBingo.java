@@ -4,7 +4,7 @@ public class TelaBingo extends javax.swing.JFrame {
     /**
      * Creates new form NewJFrame
      */
-    public TelaBingo(Bingo controle) {
+    public TelaBingo(Bingo logicaBingo) {
         
         initComponents();
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
@@ -14,7 +14,7 @@ public class TelaBingo extends javax.swing.JFrame {
 
         public void windowClosing(java.awt.event.WindowEvent windowEvent) {
 
-        controle.finalizar();
+        logicaBingo.finalizar();
 
         }});
     }
