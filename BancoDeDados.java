@@ -6,7 +6,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import java.awt.*;
 
 public class BancoDeDados {
 
@@ -16,6 +18,8 @@ public class BancoDeDados {
     private static final String URL = "jdbc:mysql://localhost:3306/nome_do_seu_banco";
     private static final String USER = "root";
     private static final String PASSWORD = "sua_senha_aqui";
+
+    private Font fontePadrao = new Font("Arial", Font.BOLD, 24);
 
     private Connection conectar() throws SQLException {
         return DriverManager.getConnection(URL, USER, PASSWORD);
@@ -44,15 +48,27 @@ public class BancoDeDados {
                 sqlException.printStackTrace();
             }
         } else {
+
+            String textoFormatado = 
+            "<html>" +
+            "<div style='text-align: center;'>" +
+            "SIMULAÇÃO DE GRAVAÇÃO DE DADOS:<br><br>" +
+            "Dados enviados:<br>" +
+            "ID Jogador: " + pessoaId + "<br>" +
+            "Pares: " + pares  + "<br>" +
+            "Movimentos: " + movimentos + "<br>" +
+            "Pontuação Final: " + pontuacao + "<br><br>" +
+            "Status: GRAVADO COM SUCESSO!" +
+            "</div>" +
+            "</html>";
+
+            JLabel mensagem = new JLabel(textoFormatado);
+
+            mensagem.setFont(this.fontePadrao);
+
             JOptionPane.showMessageDialog(
             null,
-            "SIMULAÇÃO DE BANCO DE DADOS:\n\n" +
-            "Dados enviados para persistência:\n" +
-            "ID Jogador: " + pessoaId + "\n" +
-            "Pares: " + pares + "\n" +
-            "Movimentos: " + movimentos + "\n" +
-            "Pontuação Final: " + pontuacao + "\n\n" +
-            "Status: GRAVADO COM SUCESSO!",
+            mensagem,
             "Banco De Dados",
             JOptionPane.INFORMATION_MESSAGE
             );
@@ -77,13 +93,25 @@ public class BancoDeDados {
                 sqlException.printStackTrace();
             }
         } else {
+
+            String textoFormatado = 
+            "<html>" +
+            "<div style='text-align: center;'>" +
+            "SIMULAÇÃO DE GRAVAÇÃO DE DADOS:<br><br>" +
+            "Dados enviados:<br>" +
+            "ID Jogador: " + pessoaId + "<br>" +
+            "Sequencia: " + sequencia + "<br><br>" +
+            "Status: GRAVADO COM SUCESSO!" +
+            "</div>" +
+            "</html>";
+
+            JLabel mensagem = new JLabel(textoFormatado);
+            
+            mensagem.setFont(fontePadrao);
+
             JOptionPane.showMessageDialog(
             null,
-            "SIMULAÇÃO DE BANCO DE DADOS:\n\n" +
-            "Dados enviados para persistência:\n" +
-            "ID Jogador: " + pessoaId + "\n" +
-            "Sequencia: " + sequencia + 
-            "Status: GRAVADO COM SUCESSO!",
+            mensagem,
             "Banco De Dados",
             JOptionPane.INFORMATION_MESSAGE
             );
