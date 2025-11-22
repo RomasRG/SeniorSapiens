@@ -137,10 +137,22 @@ public class TelaGenius extends JFrame{
 
     public void gameOver(int pontuacaoFinal){
 
+        String textoFormatado = 
+            "<html>" +
+            "<div style='text-align: center;'>" +
+            "Você errou! Sua pontuação final foi: " + pontuacaoFinal + "<br>" +
+            "Acabou o jogo!" +
+            "</div>" +
+            "</html>";
+
+        JLabel mensagem = new JLabel(textoFormatado);
+
+        mensagem.setFont(fontePadrao);
+
         JOptionPane.showMessageDialog(
             this, 
-            "Você errou! Sua pontuação final foi: " + pontuacaoFinal,
-            "Game Over",
+            mensagem,
+            "Errou a sequência!",
             1
         );
         setBotoesHabilitados(false);

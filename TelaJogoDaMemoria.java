@@ -242,9 +242,21 @@ public class TelaJogoDaMemoria extends JFrame{
 
         Object[] opcoes = {"Continuar (Próxima Rodada)", "Sair e Salvar"};
 
+        String textoFormatado = 
+            "<html>" +
+            "<div style='text-align: center;'>" +
+            "Você completou uma rodada!" + "<br>" +
+            "Deseja Continuar?" +
+            "</div>" +
+            "</html>";
+
+        JLabel mensagem = new JLabel(textoFormatado);
+
+        mensagem.setFont(fontePadrao);
+
         int resultado = JOptionPane.showOptionDialog(
             this,
-            "Você completou uma rodada! \nDeseja continuar?",
+            mensagem,
             "Vitória!",
             JOptionPane.YES_NO_OPTION,
             JOptionPane.QUESTION_MESSAGE,
