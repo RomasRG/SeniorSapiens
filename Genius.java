@@ -11,6 +11,7 @@ public class Genius extends Jogo{
     private TipoCor[] todasAsCores = TipoCor.values();
 
     private TelaGenius telaGenius;
+    private BancoDeDados bancoDeDados = new BancoDeDados();
     
     public enum TipoCor{
 
@@ -49,11 +50,7 @@ public class Genius extends Jogo{
 
     public void finalizar(){
 
-        //Salvar pontuação no BD-------------------------------------------
-        //Salvar pontuação no BD-------------------------------------------
-        //Salvar pontuação no BD-------------------------------------------
-        //Salvar pontuação no BD-------------------------------------------
-        //Salvar pontuação no BD-------------------------------------------
+        bancoDeDados.salvarPartidaGenius(jogador.getID(), pontuacaoFinal);
 
         if(telaGenius != null){
 

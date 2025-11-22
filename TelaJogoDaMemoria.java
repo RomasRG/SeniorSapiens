@@ -1,10 +1,8 @@
 import java.util.ArrayList;
 import javax.swing.*;
-import javax.swing.border.Border;
 
 import java.awt.*;
 import java.util.Map;
-import java.util.concurrent.Flow;
 import java.util.HashMap;
 import java.net.URL;
 
@@ -198,10 +196,10 @@ public class TelaJogoDaMemoria extends JFrame{
 
     //==========================================================
 
-    public void atualizaPlacar(int movimentos, int paresEncontrados, int rodadasCompletas){
+    public void atualizaPlacar(int movimentos, int paresTotais){
 
         this.labelMovimentos.setText("Movimentos: " + movimentos);
-        this.labelParesEncontrados.setText("Pares Completos: " + ((rodadasCompletas * 8) + paresEncontrados));
+        this.labelParesEncontrados.setText("Pares Completos: " + paresTotais);
 
     }
 
