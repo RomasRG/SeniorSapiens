@@ -1,7 +1,10 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JOptionPane;
 
@@ -87,4 +90,53 @@ public class BancoDeDados {
         }
     }
     
+    //==========================================================
+
+    public void gerarRankingGenius(){
+
+
+
+    }
+
+    //==========================================================
+
+    public List<RegistroRankingMemoria> buscarTop10Memoria() {
+        List<RegistroRankingMemoria> listaRanking = new ArrayList<>();
+        
+        if(usarBancoReal){
+            String sql = "SELECT id, nome, idade, pontuacao, pares_encontrados FROM ranking ORDER BY pontuacao DESC LIMIT 10";
+
+            try (Connection conn = conectar();
+                PreparedStatement stmt = conn.prepareStatement(sql);
+                ResultSet rs = stmt.executeQuery()) {
+
+                while (rs.next()) {
+                    // Cria o objeto com os dados dessa linha
+                    RegistroRankingMemoria registro = new RegistroRankingMemoria(
+                        rs.getInt("id"),
+                        rs.getString("nome"),
+                        rs.getInt("idade"),
+                        rs.getInt("pontuacao"),
+                        rs.getInt("pares_encontrados")
+                    );
+                    listaRanking.add(registro);
+                }
+            } catch (SQLException sqlException) {
+                sqlException.printStackTrace();
+            }
+        } else {
+            listaRanking.add(new RegistroRankingMemoria(1, "Seu João", 81, 5000, 60));
+            listaRanking.add(new RegistroRankingMemoria(2, "Vovó Juju", 75, 4500, 55));
+            listaRanking.add(new RegistroRankingMemoria(3, "Alberto", 45, 4000, 50));
+            listaRanking.add(new RegistroRankingMemoria(4, "Dona Neide", 69, 3800, 48));
+            listaRanking.add(new RegistroRankingMemoria(5, "Amelie", 53, 3500, 45));
+            listaRanking.add(new RegistroRankingMemoria(6, "Dona Maria", 82, 3200, 40));
+            listaRanking.add(new RegistroRankingMemoria(7, "Ana Maria", 67, 3000, 38));
+            listaRanking.add(new RegistroRankingMemoria(8, "Amara", 78, 2800, 35));
+            listaRanking.add(new RegistroRankingMemoria(9, "Paulo", 64, 2500, 30));
+            listaRanking.add(new RegistroRankingMemoria(10, "Roberto", 57, 1500, 20));
+        }
+        
+        return listaRanking;
+    }
 }

@@ -19,7 +19,7 @@ public class TelaJogoDaMemoria extends JFrame{
 
     private JPanel painelJogo = new JPanel(new GridLayout(4, 4));
     private JPanel painelTopo = new JPanel(new BorderLayout());
-    private JPanel painelRecomecar = new JPanel(new FlowLayout());
+    private JPanel painelInferior = new JPanel(new GridLayout(1,2));
 
     private JLabel labelMovimentos = new JLabel("Movimentos: 0");
     private JLabel labelParesEncontrados = new JLabel("Pares Completos: 0");
@@ -86,8 +86,15 @@ public class TelaJogoDaMemoria extends JFrame{
             recomecarJogo();
         });
 
-        painelRecomecar.add(botaoRecomecar);
-        painelRecomecar.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
+        painelInferior.add(botaoRecomecar);
+        painelInferior.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
+
+        JButton botaoRanking = new JButton("Ranking");
+        botaoRanking.setFont(fontePadrao);
+        botaoRanking.addActionListener(event -> {
+            logicaJogoDaMemoria.getRanking();
+
+        });
 
         // ---- Painel de Pontos ----
         labelMovimentos.setFont(fontePadrao);
@@ -99,7 +106,7 @@ public class TelaJogoDaMemoria extends JFrame{
         // ---- Montagem da Tela ----
         add(painelTopo, BorderLayout.NORTH);
         add(painelJogo, BorderLayout.CENTER);
-        add(painelRecomecar, BorderLayout.SOUTH);
+        add(painelInferior, BorderLayout.SOUTH);
 
         Timer timerInicio = new Timer(5000, event -> {
             escondeCartas();
@@ -252,6 +259,12 @@ public class TelaJogoDaMemoria extends JFrame{
         else {
             logicaJogoDaMemoria.finalizar();
         }
+
+    }
+
+    public void telaRanking(){
+
+
 
     }
 
