@@ -122,6 +122,13 @@ public class Genius extends Jogo{
 
     }
     
+    //==========================================================
+
+    public void getRanking(){
+    
+        bancoDeDados.buscarTop10Genius();
+
+    }
 }
 
 

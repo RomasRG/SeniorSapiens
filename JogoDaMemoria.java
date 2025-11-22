@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 import javax.swing.Timer;
 
@@ -220,9 +219,9 @@ public class JogoDaMemoria extends Jogo{
 
     //==========================================================
 
-    public List<RegistroRankingMemoria> getRanking() {
+    public void getRanking() {
         
-        return bancoDeDados.buscarTop10Memoria();
+        bancoDeDados.buscarTop10Memoria();
 
     }
 

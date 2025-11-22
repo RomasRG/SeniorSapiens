@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.List;
 import javax.swing.*;
 
 import java.awt.*;
@@ -92,7 +91,7 @@ public class TelaJogoDaMemoria extends JFrame{
         JButton botaoRanking = new JButton("Ranking");
         botaoRanking.setFont(fontePadrao);
         botaoRanking.addActionListener(event -> {
-            telaRanking();
+            logicaJogoDaMemoria.getRanking();
         });
         painelInferior.add(botaoRanking);
         painelInferior.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
@@ -272,13 +271,6 @@ public class TelaJogoDaMemoria extends JFrame{
         else {
             logicaJogoDaMemoria.finalizar();
         }
-
-    }
-
-    public void telaRanking(){
-
-        List<RegistroRankingMemoria> top10 =logicaJogoDaMemoria.getRanking();
-
 
     }
 

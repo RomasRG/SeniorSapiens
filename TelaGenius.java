@@ -18,7 +18,7 @@ public class TelaGenius extends JFrame{
     private Font fontePadrao = new Font("Arial", Font.BOLD, 24);
 
     private JPanel painelJogo = new JPanel(new GridLayout(2, 2));
-    private JPanel painelRecomecar = new JPanel(new FlowLayout());
+    private JPanel painelInferior = new JPanel(new GridLayout(1,2));
     private JPanel painelPontos = new JPanel(new BorderLayout());
     private JLabel labelParesEncontrados = new JLabel("Sequencia: 0");
 
@@ -100,8 +100,18 @@ public class TelaGenius extends JFrame{
         botaoRecomecar.addActionListener(event -> {
             recomecarJogo();
         });
-        painelRecomecar.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
-        painelRecomecar.add(botaoRecomecar);
+        
+        painelInferior.add(botaoRecomecar);
+
+        JButton botaoRanking = new JButton("Ranking");
+        botaoRanking.setFont(fontePadrao);
+        botaoRanking.addActionListener(event -> {
+            logicaGenius.getRanking();
+        });
+        painelInferior.add(botaoRanking);
+
+        painelInferior.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
+        
 
         // ---- Painel de Pontos ----
         labelParesEncontrados.setFont(fontePadrao);
@@ -111,7 +121,7 @@ public class TelaGenius extends JFrame{
         // ---- Montagem da Tela ----
         add(painelPontos, BorderLayout.NORTH);
         add(painelJogo, BorderLayout.CENTER);
-        add(painelRecomecar, BorderLayout.SOUTH);
+        add(painelInferior, BorderLayout.SOUTH);
 
         // ---- Sair ----
         addWindowListener(new java.awt.event.WindowAdapter() {

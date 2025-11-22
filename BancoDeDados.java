@@ -120,26 +120,66 @@ public class BancoDeDados {
     
     //==========================================================
 
-    public void gerarRankingGenius(){
+    public void buscarTop10Genius(){
 
-
-
-    }
-
-    //==========================================================
-
-    public List<RegistroRankingMemoria> buscarTop10Memoria() {
-        List<RegistroRankingMemoria> listaRanking = new ArrayList<>();
+        List<RegistroRankingGenius> listaRanking = new ArrayList<>();
         
         if(usarBancoReal){
-            String sql = "SELECT id, nome, idade, pontuacao, pares_encontrados FROM ranking ORDER BY pontuacao DESC LIMIT 10";
+            String sql = "SELECT p.id, p.nome, p.idade, hg.sequencia " +
+                 "FROM historico_genius hg " +
+                 "INNER JOIN pessoa p ON hg.pessoa_id = p.id " +
+                 "ORDER BY hg.sequencia DESC LIMIT 10";
 
             try (Connection conn = conectar();
                 PreparedStatement stmt = conn.prepareStatement(sql);
                 ResultSet rs = stmt.executeQuery()) {
 
                 while (rs.next()) {
-                    // Cria o objeto com os dados dessa linha
+                    RegistroRankingGenius registro = new RegistroRankingGenius(
+                        rs.getInt("id"),
+                        rs.getString("nome"),
+                        rs.getInt("idade"),
+                        rs.getInt("sequencia")
+                    );
+                    listaRanking.add(registro);
+                }
+            } catch (SQLException sqlException) {
+                sqlException.printStackTrace();
+            }
+        } else {
+            listaRanking.add(new RegistroRankingGenius(1, "Seu João", 81, 21));
+            listaRanking.add(new RegistroRankingGenius(2, "Vovó Juju", 75, 19));
+            listaRanking.add(new RegistroRankingGenius(3, "Alberto", 45, 16));
+            listaRanking.add(new RegistroRankingGenius(4, "Dona Neide", 69, 15));
+            listaRanking.add(new RegistroRankingGenius(5, "Amelie", 53, 12));
+            listaRanking.add(new RegistroRankingGenius(6, "Dona Maria", 82, 9));
+            listaRanking.add(new RegistroRankingGenius(7, "Ana Maria", 67, 8));
+            listaRanking.add(new RegistroRankingGenius(8, "Amara", 78, 7));
+            listaRanking.add(new RegistroRankingGenius(9, "Paulo", 64, 6));
+            listaRanking.add(new RegistroRankingGenius(10, "Roberto", 57, 4));
+        }
+        
+        TelaRankingGenius telaRankingGenius = new TelaRankingGenius(listaRanking);
+        telaRankingGenius.setVisible(true);
+
+    }
+
+    //==========================================================
+
+    public void buscarTop10Memoria() {
+        List<RegistroRankingMemoria> listaRanking = new ArrayList<>();
+        
+        if(usarBancoReal){
+            String sql = "SELECT p.id, p.nome, p.idade, hm.pontuacao, hm.pares_encontrados " +
+             "FROM historico_Memoria hm " +
+             "INNER JOIN pessoa p ON hm.pessoa_id = p.id " +
+             "ORDER BY hm.pontuacao DESC LIMIT 10";
+
+            try (Connection conn = conectar();
+                PreparedStatement stmt = conn.prepareStatement(sql);
+                ResultSet rs = stmt.executeQuery()) {
+
+                while (rs.next()) {
                     RegistroRankingMemoria registro = new RegistroRankingMemoria(
                         rs.getInt("id"),
                         rs.getString("nome"),
@@ -165,6 +205,7 @@ public class BancoDeDados {
             listaRanking.add(new RegistroRankingMemoria(10, "Roberto", 57, 1500, 20));
         }
         
-        return listaRanking;
+        TelaRankingMemoria telaRankingMemoria = new TelaRankingMemoria(listaRanking);
+        telaRankingMemoria.setVisible(true);
     }
 }
