@@ -4,7 +4,7 @@ import javax.swing.Timer;
 
 public class JogoDaMemoria extends Jogo{
 
-    private int movimentosRodada;
+    private int movimentos;
     private int movimentosTotais;
     private Random random;
     private int indicePrimeiraCarta = -1;
@@ -98,7 +98,7 @@ public class JogoDaMemoria extends Jogo{
         this.indiceSegundaCarta = -1;
         gerarMesa();
         telaJogoDaMemoria.resetarTela();
-        telaJogoDaMemoria.atualizaPlacar(movimentosRodada, paresTotais);
+        telaJogoDaMemoria.atualizaPlacar(movimentos, paresTotais);
 
     }
 
@@ -138,7 +138,7 @@ public class JogoDaMemoria extends Jogo{
     public void recomecarJogo(){
 
         this.movimentosTotais = 0;
-        this.movimentosRodada = 0;
+        this.movimentos = 0;
         this.paresRodada = 0;
         this.paresTotais = 0;
         this.indicePrimeiraCarta = -1;
@@ -164,7 +164,8 @@ public class JogoDaMemoria extends Jogo{
         } else {
 
             indiceSegundaCarta = indice;
-            movimentosRodada++;
+            movimentos++;
+            movimentosTotais++;
             telaJogoDaMemoria.setBotoesHabilitados(false);
 
             TipoFigura figura1 = posicaoCartas.get(indicePrimeiraCarta);
@@ -173,6 +174,11 @@ public class JogoDaMemoria extends Jogo{
             if(figura1 == figura2){
 
                 paresRodada++;
+                paresTotais++;
+                pontuacaoFinal += (2/movimentos) * 100;
+                movimentos = 0;
+
+
                 Timer timerDelay1 = new Timer(1000, event ->{
                     telaJogoDaMemoria.removeCarta(indicePrimeiraCarta);
                     telaJogoDaMemoria.removeCarta(indiceSegundaCarta);
@@ -181,10 +187,6 @@ public class JogoDaMemoria extends Jogo{
 
                     if(paresRodada == 8){
 
-                        pontuacaoFinal += (800 * (8/movimentosRodada));
-                        movimentosTotais += movimentosRodada;
-                        movimentosRodada = 0;
-                        paresTotais += 8;
                         telaJogoDaMemoria.mostrarDialogoVitoria();
 
                     } else {
@@ -210,7 +212,7 @@ public class JogoDaMemoria extends Jogo{
 
             }
 
-            telaJogoDaMemoria.atualizaPlacar(movimentosRodada, paresRodada);
+            telaJogoDaMemoria.atualizaPlacar(movimentosTotais, paresRodada);
         }
 
     }
