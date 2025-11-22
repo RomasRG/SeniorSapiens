@@ -173,6 +173,7 @@ public class JogoDaMemoria extends Jogo{
 
             if(figura1 == figura2){
 
+                GerenciadorDeSom.tocarAcerto();
                 paresRodada++;
                 paresTotais++;
                 pontuacaoFinal += (2/movimentos) * 100;
@@ -200,6 +201,7 @@ public class JogoDaMemoria extends Jogo{
 
             } else {
 
+                GerenciadorDeSom.tocarErro();
                 Timer timerDelay2 = new Timer(1000, event -> {
                     telaJogoDaMemoria.viraCostaCartas(indicePrimeiraCarta, indiceSegundaCarta);
                     telaJogoDaMemoria.setBotoesHabilitados(true);

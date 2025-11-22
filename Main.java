@@ -26,6 +26,7 @@ public class Main extends JFrame{
         botaoGenius.setFont(fontePadrao);
         botaoGenius.addActionListener(event -> {
             
+            GerenciadorDeSom.tocarClique();
             executarJogo(new Genius());
 
         });
@@ -35,6 +36,7 @@ public class Main extends JFrame{
         botaoBingo.setFont(fontePadrao);
         botaoBingo.addActionListener(event -> {
             
+            GerenciadorDeSom.tocarClique();
             executarJogo(new Bingo());
 
         });
@@ -44,6 +46,7 @@ public class Main extends JFrame{
         botaoJogoDaMemoria.setFont(fontePadrao);
         botaoJogoDaMemoria.addActionListener(event -> {
             
+            GerenciadorDeSom.tocarClique();
             executarJogo(new JogoDaMemoria());
 
         });

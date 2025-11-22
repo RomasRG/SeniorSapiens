@@ -91,6 +91,7 @@ public class Genius extends Jogo{
 
         if(corClicada == sequencia.get(indiceSequencia)){
 
+            GerenciadorDeSom.tocarAcerto();
             indiceSequencia++;
             if(indiceSequencia == sequencia.size()){
 
@@ -101,6 +102,7 @@ public class Genius extends Jogo{
         }
         else {
             
+            GerenciadorDeSom.tocarErro();
             pontuacaoFinal = sequencia.size() - 1;
             telaGenius.gameOver(this.pontuacaoFinal);
 

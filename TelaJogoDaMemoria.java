@@ -71,6 +71,7 @@ public class TelaJogoDaMemoria extends JFrame{
 
             botoes.get(i).addActionListener(event -> {
 
+                GerenciadorDeSom.tocarClique();
                 String indiceString = event.getActionCommand();
                 int indice = Integer.parseInt(indiceString);
                 logicaJogoDaMemoria.compararClique(indice);
@@ -83,6 +84,7 @@ public class TelaJogoDaMemoria extends JFrame{
         JButton botaoRecomecar = new JButton("Recomeçar");
         botaoRecomecar.setFont(fontePadrao);
         botaoRecomecar.addActionListener(event -> {
+            GerenciadorDeSom.tocarClique();
             recomecarJogo();
         });
 
@@ -91,6 +93,7 @@ public class TelaJogoDaMemoria extends JFrame{
         JButton botaoRanking = new JButton("Ranking");
         botaoRanking.setFont(fontePadrao);
         botaoRanking.addActionListener(event -> {
+            GerenciadorDeSom.tocarClique();
             logicaJogoDaMemoria.getRanking();
         });
         painelInferior.add(botaoRanking);
@@ -109,6 +112,7 @@ public class TelaJogoDaMemoria extends JFrame{
         add(painelInferior, BorderLayout.SOUTH);
 
         Timer timerInicio = new Timer(5000, event -> {
+            GerenciadorDeSom.tocarClique();
             escondeCartas();
         });
         timerInicio.setRepeats(false);
@@ -119,7 +123,7 @@ public class TelaJogoDaMemoria extends JFrame{
         addWindowListener(new java.awt.event.WindowAdapter() {
 
         public void windowClosing(java.awt.event.WindowEvent windowEvent) {
-
+            GerenciadorDeSom.tocarClique();
             logicaJogoDaMemoria.finalizar();
 
         }});

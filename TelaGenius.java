@@ -46,6 +46,7 @@ public class TelaGenius extends JFrame{
         botoesMap.put(Genius.TipoCor.Vermelho, botaoVermelho);
 
         botaoVermelho.addActionListener(event -> {
+            GerenciadorDeSom.tocarClique();
             piscarBotao(Genius.TipoCor.Vermelho);
             logicaGenius.compararClique(Genius.TipoCor.Vermelho);
         });
@@ -59,6 +60,7 @@ public class TelaGenius extends JFrame{
         botoesMap.put(Genius.TipoCor.Azul, botaoAzul);
 
         botaoAzul.addActionListener(event -> {
+            GerenciadorDeSom.tocarClique();
             piscarBotao(Genius.TipoCor.Azul);
             logicaGenius.compararClique(Genius.TipoCor.Azul);
         });
@@ -72,6 +74,7 @@ public class TelaGenius extends JFrame{
         botoesMap.put(Genius.TipoCor.Amarelo, botaoAmarelo);
 
         botaoAmarelo.addActionListener(event -> {
+            GerenciadorDeSom.tocarClique();
             piscarBotao(Genius.TipoCor.Amarelo);
             logicaGenius.compararClique(Genius.TipoCor.Amarelo);
         });
@@ -85,6 +88,7 @@ public class TelaGenius extends JFrame{
         botoesMap.put(Genius.TipoCor.Verde, botaoVerde);
 
         botaoVerde.addActionListener(event -> {
+            GerenciadorDeSom.tocarClique();
             piscarBotao(Genius.TipoCor.Verde);
             logicaGenius.compararClique(Genius.TipoCor.Verde);
         });
@@ -98,6 +102,7 @@ public class TelaGenius extends JFrame{
         JButton botaoRecomecar = new JButton("Recomeçar");
         botaoRecomecar.setFont(fontePadrao);
         botaoRecomecar.addActionListener(event -> {
+            GerenciadorDeSom.tocarClique();
             recomecarJogo();
         });
         
@@ -106,6 +111,7 @@ public class TelaGenius extends JFrame{
         JButton botaoRanking = new JButton("Ranking");
         botaoRanking.setFont(fontePadrao);
         botaoRanking.addActionListener(event -> {
+            GerenciadorDeSom.tocarClique();
             logicaGenius.getRanking();
         });
         painelInferior.add(botaoRanking);
@@ -128,6 +134,7 @@ public class TelaGenius extends JFrame{
 
         public void windowClosing(java.awt.event.WindowEvent windowEvent) {
 
+            GerenciadorDeSom.tocarClique();
             logicaGenius.finalizar();
 
         }});
