@@ -70,6 +70,24 @@ public class Genius extends Jogo{
 
     //==========================================================
 
+    public void finalizarTutorial(){
+
+        if(tutorialGenius != null){
+
+            tutorialGenius.dispose();
+
+        }
+
+        if(mainApp != null){
+
+            mainApp.exibirMenuPrincipal();
+
+        }
+
+    }
+
+    //==========================================================
+
     public void iniciarTutorial(){
 
         this.tutorialGenius = new TutorialGenius(this);

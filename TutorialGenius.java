@@ -21,7 +21,7 @@ public class TutorialGenius extends JFrame{
         public void windowClosing(java.awt.event.WindowEvent windowEvent) {
 
             GerenciadorDeSom.tocarClique();
-            logicaGenius.finalizar();
+            logicaGenius.finalizarTutorial();
 
         }});
 

@@ -21,7 +21,7 @@ public class TutorialBingo extends JFrame{
         public void windowClosing(java.awt.event.WindowEvent windowEvent) {
 
             GerenciadorDeSom.tocarClique();
-            logicaBingo.finalizar();
+            logicaBingo.finalizarTutorial();
 
         }});
 

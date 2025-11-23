@@ -21,7 +21,7 @@ public class TutorialJogoDaMemoria extends JFrame{
         public void windowClosing(java.awt.event.WindowEvent windowEvent) {
 
             GerenciadorDeSom.tocarClique();
-            logicaJogoDaMemoria.finalizar();
+            logicaJogoDaMemoria.finalizarTutorial();
 
         }});
 
