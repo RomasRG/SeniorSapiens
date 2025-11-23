@@ -121,7 +121,7 @@ public class TelaCadastroPessoa extends JFrame{
                     valIdade = Integer.parseInt(idade);
                     int idGerado = bancoDeDados.cadastroPessoa(nome, valIdade);
                     dispose();
-                    new Main(idGerado);
+                    new Main(idGerado, false);
                 }catch(NumberFormatException numberFormatException){
 
                     String textoFormatado = "Por favor, a idade deve ser um número inteiro.";
@@ -148,10 +148,6 @@ public class TelaCadastroPessoa extends JFrame{
         painelInferior.add(botaoTelaAdmin);
 
         add(painelInferior, BorderLayout.SOUTH);
-    }
-
-    public static void main(String[] args) {
-        new TelaCadastroPessoa().setVisible(true);
     }
 
 }

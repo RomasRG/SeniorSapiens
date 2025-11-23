@@ -117,7 +117,7 @@ public class JogoDaMemoria extends Jogo{
 
     public void finalizar(){
 
-        bancoDeDados.salvarPartidaMemoria(jogador.getID(), paresTotais, movimentosTotais, pontuacaoFinal);
+        bancoDeDados.salvarPartidaMemoria(idPessoa, paresTotais, movimentosTotais, pontuacaoFinal);
 
         if(telaJogoDaMemoria != null){
 

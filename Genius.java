@@ -51,7 +51,7 @@ public class Genius extends Jogo{
 
     public void finalizar(){
 
-        bancoDeDados.salvarPartidaGenius(jogador.getID(), pontuacaoFinal);
+        bancoDeDados.salvarPartidaGenius(idPessoa, pontuacaoFinal);
 
         if(telaGenius != null){
 

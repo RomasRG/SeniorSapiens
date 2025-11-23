@@ -4,8 +4,9 @@ import java.awt.*;
 public class Main extends JFrame{
 
     private JFrame menuPrincipal;
-    private boolean logado = true;
     private Font fontePadrao = new Font("Arial", Font.BOLD, 24);
+    private boolean admin = false;
+    private int idGerado;
 
     //==========================================================
     public static void main(String[] args) {
@@ -14,8 +15,10 @@ public class Main extends JFrame{
 
     }
 
-    public Main(int idGerado){
+    public Main(int idGerado, boolean admin){
 
+        this.idGerado = idGerado;
+        this.admin = admin;
         menuPrincipal = new JFrame("Menu");
         menuPrincipal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         menuPrincipal.setSize(400, 300);
@@ -66,52 +69,16 @@ public class Main extends JFrame{
 
     //==========================================================
 
-    public void iniciarSessaoUsuario(){
-
-
-
-    }
-
-    //==========================================================
-
     public void executarJogo(Jogo jogoEscolhido){
 
-        if(logado){
-
-            menuPrincipal.setVisible(false);
-            jogoEscolhido.setMainApp(this);
-            jogoEscolhido.iniciarTutorial();
-
-        }
-        else{
-
-            JOptionPane.showMessageDialog(
-
-                null,
-                "Insira um nome ou logue antes de começar.",
-                "Erro ao Iniciar",
-                1
-
-            );
-
-        }
-
-    }
-
-    //==========================================================
-
-    public void cadastroAdmin(){
-
+        menuPrincipal.setVisible(false);
+        jogoEscolhido.setMainApp(this);
+        jogoEscolhido.idPessoa = idGerado;
+        jogoEscolhido.iniciarTutorial();
 
 
     }
 
     //==========================================================
-
-    public static void loginAdmin(String email, String senha){
-
-        
-
-    }
 
 }

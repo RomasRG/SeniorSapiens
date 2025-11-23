@@ -3,9 +3,10 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Base64;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import java.awt.*;
@@ -209,13 +210,103 @@ public class BancoDeDados {
         telaRankingMemoria.setVisible(true);
     }
 
+    //==========================================================
+
     public int cadastroPessoa(String nome, int valIdade){
 
         if(usarBancoReal){
+            String sql = "INSERT INTO pessoa (idade, nome) VALUES (?, ?)";
 
+            try(Connection conn = conectar();
+                PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)){
+
+                    stmt.setInt(1, valIdade);
+                    stmt.setString(2, nome);
+
+                    int affectedRows = stmt.executeUpdate();
+
+                    if(affectedRows > 0){
+                        try(ResultSet generatedKeys = stmt.getGeneratedKeys()){
+                            if(generatedKeys.next()){
+                                return generatedKeys.getInt(1);
+                            }
+                        }
+                    }
+                    return -1;
+
+            } catch(SQLException sqlException) {
+                System.err.println("Erro ao salvar no banco: " + sqlException.getMessage());
+                sqlException.printStackTrace();
+                return -1;
+            }
         } else {
 
+            //ID meramente por finalidades de testes.
+            return 11;
+
+        }
+
+    }
+
+    //==========================================================
+
+    public int cadastroAdmin(String nome, int valIdade, String email, String senha){
+
+        if(usarBancoReal){
             
+            String sqlPessoa = "INSERT INTO pessoa (idade, nome) VALUES (?, ?)";
+            String sqlAdmin = "INSERT INTO admin (pessoa_id, email, senha) VALUES (?, ?, ?)";
+            
+            Connection conn = null;
+            PreparedStatement stmtPessoa = null;
+            PreparedStatement stmtAdmin = null;
+
+            try{
+                    conn = conectar();
+                    conn.setAutoCommit(false);
+
+                    //Insere Pessoa
+                    stmtPessoa = conn.prepareStatement(sqlPessoa);
+                    stmtPessoa.setInt(1, valIdade);
+                    stmtPessoa.setString(2, nome);
+
+                    int affectedRows = stmtPessoa.executeUpdate();
+
+                    int idGerado = -1;
+                    if(affectedRows > 0){
+                        try(ResultSet generatedKeys = stmtPessoa.getGeneratedKeys()){
+                            if(generatedKeys.next()){
+                                idGerado = generatedKeys.getInt(1);
+                            }
+                        }
+                    }
+                    
+                    if(idGerado == -1){
+                        throw new SQLException("Falha ao obter ID da pessoa.");
+                    }
+
+                    String senhaCriptografada = Base64.getEncoder().encodeToString(senha.getBytes());
+                    stmtAdmin = conn.prepareStatement(sqlAdmin);
+
+                    stmtAdmin.setInt(1, idGerado);
+                    stmtAdmin.setString(2, email);
+                    stmtAdmin.setString(3, senhaCriptografada);
+
+                    stmtAdmin.executeUpdate();
+
+                    conn.commit();
+                    return idGerado;
+                    
+
+            } catch(SQLException sqlException) {
+                System.err.println("Erro ao salvar no banco: " + sqlException.getMessage());
+                sqlException.printStackTrace();
+                return -1;
+            }
+        } else {
+
+            //ID meramente por finalidades de testes.
+            return 11;
 
         }
 
