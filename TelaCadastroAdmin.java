@@ -13,7 +13,7 @@ public class TelaCadastroAdmin extends JFrame{
     public TelaCadastroAdmin(){
 
         super("Tela Cadastro Admin");
-        setSize(500, 500);
+        setSize(700, 500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(new BorderLayout());
@@ -36,10 +36,13 @@ public class TelaCadastroAdmin extends JFrame{
         JLabel textoIdade = new JLabel("Idade: ");
         JLabel textoEmail = new JLabel("Email: ");
         JLabel textoSenha = new JLabel("Senha: ");
-        JLabel textoConfirmaSenha = new JLabel("Confirmação de Senha");
+        JLabel textoConfirmaSenha = new JLabel("Confirmação de Senha: ");
 
         textoNome.setFont(fontePadrao);
         textoIdade.setFont(fontePadrao);
+        textoEmail.setFont(fontePadrao);
+        textoSenha.setFont(fontePadrao);
+        textoConfirmaSenha.setFont(fontePadrao);
 
         textoNome.setHorizontalAlignment(SwingConstants.RIGHT);
         textoIdade.setHorizontalAlignment(SwingConstants.RIGHT);
@@ -65,45 +68,42 @@ public class TelaCadastroAdmin extends JFrame{
         gbc.fill = GridBagConstraints.HORIZONTAL;
 
         //Primeira Coluna
+
+        gbc.weightx = 0.0;
         gbc.gridx = 0;
+
         gbc.gridy = 0;
         painelCentral.add(textoNome, gbc);
 
-        gbc.gridx = 0;
         gbc.gridy = 1;
         painelCentral.add(textoIdade, gbc);
 
-        gbc.gridx = 0;
         gbc.gridy = 2;
         painelCentral.add(textoEmail, gbc);
 
-        gbc.gridx = 0;
         gbc.gridy = 3;
         painelCentral.add(textoSenha, gbc);
 
-        gbc.gridx = 0;
         gbc.gridy = 4;
         painelCentral.add(textoConfirmaSenha, gbc);
 
         //Segunda Coluna
 
+        gbc.weightx = 1.0;
         gbc.gridx = 1;
+        
         gbc.gridy = 0;
         painelCentral.add(cxNome, gbc);
 
-        gbc.gridx = 1;
         gbc.gridy = 1;
         painelCentral.add(cxIdade, gbc);
 
-        gbc.gridx = 1;
         gbc.gridy = 2;
         painelCentral.add(cxEmail, gbc);
 
-        gbc.gridx = 1;
         gbc.gridy = 3;
         painelCentral.add(cxSenha, gbc);
 
-        gbc.gridx = 1;
         gbc.gridy = 4;
         painelCentral.add(cxConfirmaSenha, gbc);
 
@@ -188,7 +188,7 @@ public class TelaCadastroAdmin extends JFrame{
                     "Erro ao cadastrar.",
                     1
                 );
-            }else if(confirmaSenha != senha){
+            }else if(!confirmaSenha.equals(senha)){
                 String textoFormatado = "As senhas são diferentes.";
                 JLabel mensagem = new JLabel(textoFormatado);
                 mensagem.setFont(fontePadrao);
