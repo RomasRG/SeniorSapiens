@@ -18,6 +18,10 @@ public abstract class Jogo {
 
     //==========================================================
 
+    public abstract void finalizarTutorial();
+
+    //==========================================================
+
     public int getPontuacaoFinal(){
 
         return pontuacaoFinal;

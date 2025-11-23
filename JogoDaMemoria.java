@@ -136,6 +136,24 @@ public class JogoDaMemoria extends Jogo{
 
     //==========================================================
 
+    public void finalizarTutorial(){
+
+        if(tutorialJogoDaMemoria != null){
+
+            tutorialJogoDaMemoria.dispose();
+
+        }
+
+        if(mainApp != null){
+
+            mainApp.exibirMenuPrincipal();
+
+        }
+
+    }
+
+    //==========================================================
+
     public void iniciarTutorial(){
         
         this.tutorialJogoDaMemoria = new TutorialJogoDaMemoria(this);

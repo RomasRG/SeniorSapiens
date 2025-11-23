@@ -1,13 +1,17 @@
 public class Bingo extends Jogo{
     
-    private TelaBingo bingo;
+    private TelaBingo telaBingo;
     private TutorialBingo tutorialBingo;
 
 
+    //==========================================================
+
     public void iniciar(){
-        this.bingo = new TelaBingo(this);
-        this.bingo.setVisible(true);
+        this.telaBingo = new TelaBingo(this);
+        this.telaBingo.setVisible(true);
     }
+
+    //==========================================================
 
     public void iniciarTutorial(){
 
@@ -16,10 +20,12 @@ public class Bingo extends Jogo{
 
     }
 
-    public void finalizar(){
-        if(bingo != null){
+    //==========================================================
 
-            bingo.dispose();
+    public void finalizar(){
+        if(telaBingo != null){
+
+            telaBingo.dispose();
 
         }
         if(mainApp != null){
@@ -30,5 +36,25 @@ public class Bingo extends Jogo{
 
         
     }
+
+    //==========================================================
+
+    public void finalizarTutorial(){
+
+        if(tutorialBingo != null){
+
+            tutorialBingo.dispose();
+
+        }
+
+        if(mainApp != null){
+
+            mainApp.exibirMenuPrincipal();
+
+        }
+
+    }
+
+    
     
 }
