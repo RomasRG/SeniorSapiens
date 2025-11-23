@@ -13,7 +13,7 @@ public class TelaCadastroPessoa extends JFrame{
 
         super("Tela Cadastro Usuário");
         setSize(500, 400);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(new BorderLayout());
 
@@ -141,6 +141,8 @@ public class TelaCadastroPessoa extends JFrame{
 
         botaoTelaAdmin.addActionListener(event ->{
             GerenciadorDeSom.tocarClique();
+            dispose();
+            new TelaCadastroAdmin().setVisible(true);
 
         });
 
