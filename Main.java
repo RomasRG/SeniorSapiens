@@ -104,7 +104,7 @@ public class Main extends JFrame{
             JButton botaoSortearBingo = new JButton("Sortear Bingo");
             botaoSortearBingo.setFont(fontePadrao);
             botaoSortearBingo.addActionListener(event -> {
-                //Chama tela sortear bingo
+                java.awt.EventQueue.invokeLater(() -> new TelaSorteio().setVisible(true));
             });
             containerBotoesBingo.add(botaoSortearBingo);
         }
