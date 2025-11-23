@@ -15,6 +15,7 @@ public class TutorialJogoDaMemoria extends JFrame{
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(new BorderLayout(20, 20));
+        setResizable(false);
 
         addWindowListener(new java.awt.event.WindowAdapter() {
 
