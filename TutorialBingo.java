@@ -12,9 +12,18 @@ public class TutorialBingo extends JFrame{
         super("Como jogar Bingo");
 
         setSize(600, 600);
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(new BorderLayout(20, 20));
+        
+        addWindowListener(new java.awt.event.WindowAdapter() {
+
+        public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+
+            GerenciadorDeSom.tocarClique();
+            logicaBingo.finalizar();
+
+        }});
 
         //  Título
         JLabel labelTitulo = new JLabel("Como jogar Bingo", JLabel.CENTER);
