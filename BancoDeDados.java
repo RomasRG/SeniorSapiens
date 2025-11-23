@@ -208,4 +208,16 @@ public class BancoDeDados {
         TelaRankingMemoria telaRankingMemoria = new TelaRankingMemoria(listaRanking);
         telaRankingMemoria.setVisible(true);
     }
+
+    public int cadastroPessoa(String nome, int valIdade){
+
+        if(usarBancoReal){
+
+        } else {
+
+            
+
+        }
+
+    }
 }

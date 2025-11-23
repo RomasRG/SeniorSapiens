@@ -10,11 +10,11 @@ public class Main extends JFrame{
     //==========================================================
     public static void main(String[] args) {
         
-        SwingUtilities.invokeLater(() -> new Main());
+        SwingUtilities.invokeLater(() -> new TelaCadastroPessoa());
 
     }
 
-    public Main(){
+    public Main(int idGerado){
 
         menuPrincipal = new JFrame("Menu");
         menuPrincipal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

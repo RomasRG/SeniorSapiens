@@ -7,6 +7,8 @@ public class TelaCadastroPessoa extends JFrame{
     private Font fonteNegrito = new Font("Arial", Font.BOLD, 24);
     private Font fontePadrao = new Font("Arial", Font.PLAIN, 24);
 
+    private BancoDeDados bancoDeDados = new BancoDeDados();
+
     public TelaCadastroPessoa(){
 
         super("Tela Cadastro Usuário");
@@ -81,6 +83,60 @@ public class TelaCadastroPessoa extends JFrame{
 
         botaoCadastro.addActionListener(event ->{
             GerenciadorDeSom.tocarClique();
+
+            String nome = cxNome.getText();
+            String idade = cxIdade.getText();
+
+            if(nome.trim().isEmpty()){
+
+                String textoFormatado = "Por favor, insira um nome.";
+                JLabel mensagem = new JLabel(textoFormatado);
+                mensagem.setFont(fontePadrao);
+
+                JOptionPane.showMessageDialog(
+                    null,
+                    mensagem,
+                    "Erro ao cadastrar.",
+                    1
+                );
+            }
+            else if(idade.trim().isEmpty()){
+
+                String textoFormatado = "Por favor, insira uma idade.";
+                JLabel mensagem = new JLabel(textoFormatado);
+                mensagem.setFont(fontePadrao);
+
+                JOptionPane.showMessageDialog(
+                    null,
+                    mensagem,
+                    "Erro ao cadastrar.",
+                    1
+                );
+            }
+            else{
+
+                int valIdade;
+
+                try{
+                    valIdade = Integer.parseInt(idade);
+                    int idGerado = bancoDeDados.cadastroPessoa(nome, valIdade);
+                    dispose();
+                    new Main(idGerado);
+                }catch(NumberFormatException numberFormatException){
+
+                    String textoFormatado = "Por favor, a idade deve ser um número inteiro.";
+                    JLabel mensagem = new JLabel(textoFormatado);
+                    mensagem.setFont(fontePadrao);
+
+                    JOptionPane.showMessageDialog(
+                        null,
+                        mensagem,
+                        "Erro ao cadastrar.",
+                        1
+                    );
+                }
+            }
+
         });
 
         botaoTelaAdmin.addActionListener(event ->{
@@ -92,6 +148,10 @@ public class TelaCadastroPessoa extends JFrame{
         painelInferior.add(botaoTelaAdmin);
 
         add(painelInferior, BorderLayout.SOUTH);
+    }
+
+    public static void main(String[] args) {
+        new TelaCadastroPessoa().setVisible(true);
     }
 
 }
