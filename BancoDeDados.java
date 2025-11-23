@@ -311,4 +311,45 @@ public class BancoDeDados {
         }
 
     }
+
+    //==========================================================
+
+    public int loginAdmin(String email, String senha) {
+    
+    if (usarBancoReal) {
+
+    String sql = "SELECT pessoa_id, senha FROM admin WHERE email = ?";
+    
+    try (Connection conn = conectar();
+         PreparedStatement stmt = conn.prepareStatement(sql)) {
+        
+        stmt.setString(1, email);
+        ResultSet rs = stmt.executeQuery();
+        
+        if (rs.next()) {
+            String senhaBanco = rs.getString("senha");
+            int id = rs.getInt("pessoa_id");
+            
+            String senhaCriptografada = java.util.Base64.getEncoder().encodeToString(senha.getBytes());
+            
+            if (senhaCriptografada.equals(senhaBanco)) {
+                return id;
+            }
+        }
+        
+    } catch (SQLException sqlException) {
+        sqlException.printStackTrace();
+    }
+    
+    return -1;
+    
+    } else {
+        if (email.equals("admin") && senha.equals("admin")) {
+            return 11; 
+        }
+        return -1;
+        }
+
+    }
+
 }

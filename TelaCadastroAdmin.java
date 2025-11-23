@@ -4,7 +4,6 @@ import javax.swing.border.EmptyBorder;
 
 public class TelaCadastroAdmin extends JFrame{
     
-
     private Font fonteNegrito = new Font("Arial", Font.BOLD, 24);
     private Font fontePadrao = new Font("Arial", Font.PLAIN, 24);
 
@@ -13,7 +12,7 @@ public class TelaCadastroAdmin extends JFrame{
     public TelaCadastroAdmin(){
 
         super("Tela Cadastro Admin");
-        setSize(700, 500);
+        setSize(700, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(new BorderLayout());
@@ -112,14 +111,16 @@ public class TelaCadastroAdmin extends JFrame{
         add(painelCentral, BorderLayout.CENTER);
 
         //Painel Inferior
-        JPanel painelInferior = new JPanel(new GridLayout(2,1, 0,15));
+        JPanel painelInferior = new JPanel(new GridLayout(3,1, 0,15));
         painelInferior.setBorder(new EmptyBorder(20, 10, 10, 10));
 
         JButton botaoCadastro = new JButton("Cadastrar");
-        JButton botaoTelaAdmin = new JButton("Admin");
+        JButton botaoLoginAdmin = new JButton("Login");
+        JButton botaoVoltar = new JButton("Voltar");
         
         botaoCadastro.setFont(fonteNegrito);
-        botaoTelaAdmin.setFont(fonteNegrito);
+        botaoLoginAdmin.setFont(fonteNegrito);
+        botaoVoltar.setFont(fonteNegrito);
 
         botaoCadastro.addActionListener(event ->{
             GerenciadorDeSom.tocarClique();
@@ -225,19 +226,23 @@ public class TelaCadastroAdmin extends JFrame{
 
         });
 
-        botaoTelaAdmin.addActionListener(event ->{
+        botaoLoginAdmin.addActionListener(event ->{
             GerenciadorDeSom.tocarClique();
+            dispose();
+            new TelaLoginAdmin().setVisible(true);
+        });
 
+        botaoVoltar.addActionListener(event -> {
+            GerenciadorDeSom.tocarClique();
+            dispose();
+            new TelaCadastroPessoa().setVisible(true);
         });
 
         painelInferior.add(botaoCadastro);
-        painelInferior.add(botaoTelaAdmin);
+        painelInferior.add(botaoLoginAdmin);
+        painelInferior.add(botaoVoltar);
 
         add(painelInferior, BorderLayout.SOUTH);
-    }
-
-    public static void main(String[] args) {
-        new TelaCadastroAdmin().setVisible(true);
     }
 
 }
