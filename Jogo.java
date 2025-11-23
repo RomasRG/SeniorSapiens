@@ -14,6 +14,10 @@ public abstract class Jogo {
 
     //==========================================================
 
+    public abstract void iniciarTutorial();
+
+    //==========================================================
+
     public int getPontuacaoFinal(){
 
         return pontuacaoFinal;
@@ -25,8 +29,5 @@ public abstract class Jogo {
         this.mainApp = main;
 
     }
-
-    
-
     
 }

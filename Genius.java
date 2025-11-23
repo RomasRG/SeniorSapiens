@@ -12,6 +12,7 @@ public class Genius extends Jogo{
 
     private TelaGenius telaGenius;
     private BancoDeDados bancoDeDados = new BancoDeDados();
+    private TutorialGenius tutorialGenius;
     
     public enum TipoCor{
 
@@ -69,6 +70,15 @@ public class Genius extends Jogo{
 
     //==========================================================
 
+    public void iniciarTutorial(){
+
+        this.tutorialGenius = new TutorialGenius(this);
+        this.tutorialGenius.setVisible(true);
+
+    }
+
+    //==========================================================
+
     public void proximoTurno(){
 
         int numeroDeCores = todasAsCores.length;
@@ -95,6 +105,7 @@ public class Genius extends Jogo{
             indiceSequencia++;
             if(indiceSequencia == sequencia.size()){
 
+                pontuacaoFinal++;
                 proximoTurno();
 
             }
@@ -103,7 +114,6 @@ public class Genius extends Jogo{
         else {
             
             GerenciadorDeSom.tocarErro();
-            pontuacaoFinal = sequencia.size() - 1;
             telaGenius.gameOver(this.pontuacaoFinal);
 
         }

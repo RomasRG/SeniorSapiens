@@ -8,6 +8,7 @@ public class TelaBingo extends javax.swing.JFrame {
         
         initComponents();
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setLocationRelativeTo(null);
         inicializarCartela();
         
         addWindowListener(new java.awt.event.WindowAdapter() {

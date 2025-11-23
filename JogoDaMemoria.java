@@ -15,6 +15,7 @@ public class JogoDaMemoria extends Jogo{
 
     private TelaJogoDaMemoria telaJogoDaMemoria;
     private BancoDeDados bancoDeDados = new BancoDeDados();
+    private TutorialJogoDaMemoria tutorialJogoDaMemoria;
 
     public enum TipoFigura{
 
@@ -130,6 +131,15 @@ public class JogoDaMemoria extends Jogo{
 
         }
 
+
+    }
+
+    //==========================================================
+
+    public void iniciarTutorial(){
+        
+        this.tutorialJogoDaMemoria = new TutorialJogoDaMemoria(this);
+        this.tutorialJogoDaMemoria.setVisible(true);
 
     }
 

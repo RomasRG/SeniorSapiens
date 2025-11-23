@@ -80,7 +80,7 @@ public class Main extends JFrame{
 
             menuPrincipal.setVisible(false);
             jogoEscolhido.setMainApp(this);
-            jogoEscolhido.iniciar();
+            jogoEscolhido.iniciarTutorial();
 
         }
         else{
@@ -88,21 +88,13 @@ public class Main extends JFrame{
             JOptionPane.showMessageDialog(
 
                 null,
-                "Insira um nome ou logue antes te começar.",
+                "Insira um nome ou logue antes de começar.",
                 "Erro ao Iniciar",
                 1
 
             );
 
         }
-
-    }
-
-    //==========================================================
-
-    public void exibirRanking(){
-
-
 
     }
 
