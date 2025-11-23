@@ -10,7 +10,7 @@ public class TelaSorteio extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jButton1.setText("Sortear");
         
@@ -51,11 +51,6 @@ public class TelaSorteio extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         String num = sorteioBingo.sortearNumero();
         jLabel1.setText(num);
-    }
-
-    public static void main(String args[]) {
-
-        java.awt.EventQueue.invokeLater(() -> new TelaSorteio().setVisible(true));
     }
 
     private javax.swing.JButton jButton1;

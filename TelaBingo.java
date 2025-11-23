@@ -1,3 +1,5 @@
+import java.awt.*;
+
 public class TelaBingo extends javax.swing.JFrame {
     
     private Cartela cartela;
@@ -96,7 +98,7 @@ public class TelaBingo extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
+        
         I1.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         I1.setText("I1");
         I1.addActionListener(new java.awt.event.ActionListener() {
@@ -123,6 +125,7 @@ public class TelaBingo extends javax.swing.JFrame {
 
         B1.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         B1.setText("B1");
+        B1.setOpaque(true);
         B1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 B1ActionPerformed(evt);
@@ -449,7 +452,14 @@ public class TelaBingo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void B1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B1ActionPerformed
-        
+        //PQ ISSO NÃO FUNCIONA, PELO AMOR DE DEUS SOCORRO
+        if (B1.isSelected()) {
+            // Estado LIGADO
+            B1.setBackground(Color.RED); // Muda para Verde
+        } else {
+            // Estado DESLIGADO
+            B1.setBackground(Color.RED);   // Volta para Vermelho
+        }
     }//GEN-LAST:event_B1ActionPerformed
 
     private void B2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B2ActionPerformed
