@@ -66,31 +66,31 @@ public class TelaBingo extends javax.swing.JFrame {
     
     private void initComponents() {
 
-        I1 = new javax.swing.JToggleButton();
-        N1 = new javax.swing.JToggleButton();
-        G1 = new javax.swing.JToggleButton();
-        B1 = new javax.swing.JToggleButton();
-        I2 = new javax.swing.JToggleButton();
-        N2 = new javax.swing.JToggleButton();
-        G2 = new javax.swing.JToggleButton();
-        B2 = new javax.swing.JToggleButton();
-        I3 = new javax.swing.JToggleButton();
-        papacapim = new javax.swing.JToggleButton();
-        G3 = new javax.swing.JToggleButton();
-        B3 = new javax.swing.JToggleButton();
-        I4 = new javax.swing.JToggleButton();
-        N4 = new javax.swing.JToggleButton();
-        G4 = new javax.swing.JToggleButton();
-        B4 = new javax.swing.JToggleButton();
-        I5 = new javax.swing.JToggleButton();
-        N5 = new javax.swing.JToggleButton();
-        G5 = new javax.swing.JToggleButton();
-        B5 = new javax.swing.JToggleButton();
-        O3 = new javax.swing.JToggleButton();
-        O4 = new javax.swing.JToggleButton();
-        O1 = new javax.swing.JToggleButton();
-        O2 = new javax.swing.JToggleButton();
-        O5 = new javax.swing.JToggleButton();
+        I1 = new javax.swing.JButton();
+        N1 = new javax.swing.JButton();
+        G1 = new javax.swing.JButton();
+        B1 = new javax.swing.JButton();
+        I2 = new javax.swing.JButton();
+        N2 = new javax.swing.JButton();
+        G2 = new javax.swing.JButton();
+        B2 = new javax.swing.JButton();
+        I3 = new javax.swing.JButton();
+        papacapim = new javax.swing.JButton();
+        G3 = new javax.swing.JButton();
+        B3 = new javax.swing.JButton();
+        I4 = new javax.swing.JButton();
+        N4 = new javax.swing.JButton();
+        G4 = new javax.swing.JButton();
+        B4 = new javax.swing.JButton();
+        I5 = new javax.swing.JButton();
+        N5 = new javax.swing.JButton();
+        G5 = new javax.swing.JButton();
+        B5 = new javax.swing.JButton();
+        O3 = new javax.swing.JButton();
+        O4 = new javax.swing.JButton();
+        O1 = new javax.swing.JButton();
+        O2 = new javax.swing.JButton();
+        O5 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -173,7 +173,6 @@ public class TelaBingo extends javax.swing.JFrame {
         });
 
         papacapim.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        papacapim.setSelected(true);
         papacapim.setText("FREE");
         papacapim.setEnabled(false);
 
@@ -452,139 +451,228 @@ public class TelaBingo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void B1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B1ActionPerformed
-        //PQ ISSO NÃO FUNCIONA, PELO AMOR DE DEUS SOCORRO
-        if (B1.isSelected()) {
-            // Estado LIGADO
-            B1.setBackground(Color.RED); // Muda para Verde
+        if (B1.getBackground().equals(Color.BLUE)) {
+            B1.setBackground(null);
         } else {
-            // Estado DESLIGADO
-            B1.setBackground(Color.RED);   // Volta para Vermelho
+            B1.setBackground(Color.BLUE);
         }
     }//GEN-LAST:event_B1ActionPerformed
 
     private void B2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B2ActionPerformed
-        
+        if (B2.getBackground().equals(Color.BLUE)) {
+            B2.setBackground(null);
+        } else {
+            B2.setBackground(Color.BLUE);
+        }
     }//GEN-LAST:event_B2ActionPerformed
 
     private void B3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B3ActionPerformed
-        
+        if (B3.getBackground().equals(Color.BLUE)) {
+            B3.setBackground(null);
+        } else {
+            B3.setBackground(Color.BLUE);
+        }
     }//GEN-LAST:event_B3ActionPerformed
 
     private void B4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B4ActionPerformed
-        
+        if (B4.getBackground().equals(Color.BLUE)) {
+            B4.setBackground(null);
+        } else {
+            B4.setBackground(Color.BLUE);
+        }
     }//GEN-LAST:event_B4ActionPerformed
 
     private void B5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B5ActionPerformed
-        
+        if (B5.getBackground().equals(Color.BLUE)) {
+            B5.setBackground(null);
+        } else {
+            B5.setBackground(Color.BLUE);
+        }
     }//GEN-LAST:event_B5ActionPerformed
 
     private void I1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_I1ActionPerformed
-        
+        if (I1.getBackground().equals(Color.BLUE)) {
+            I1.setBackground(null);
+        } else {
+            I1.setBackground(Color.BLUE);
+        }
     }//GEN-LAST:event_I1ActionPerformed
 
     private void I2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_I2ActionPerformed
-        
+        if (I2.getBackground().equals(Color.BLUE)) {
+            I2.setBackground(null);
+        } else {
+            I2.setBackground(Color.BLUE);
+        }
     }//GEN-LAST:event_I2ActionPerformed
 
     private void I3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_I3ActionPerformed
-        
+        if (I3.getBackground().equals(Color.BLUE)) {
+            I3.setBackground(null);
+        } else {
+            I3.setBackground(Color.BLUE);
+        }
     }//GEN-LAST:event_I3ActionPerformed
 
     private void I4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_I4ActionPerformed
-        
+        if (I4.getBackground().equals(Color.BLUE)) {
+            I4.setBackground(null);
+        } else {
+            I4.setBackground(Color.BLUE);
+        }
     }//GEN-LAST:event_I4ActionPerformed
 
     private void I5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_I5ActionPerformed
-        
+        if (I5.getBackground().equals(Color.BLUE)) {
+            I5.setBackground(null);
+        } else {
+            I5.setBackground(Color.BLUE);
+        }
     }//GEN-LAST:event_I5ActionPerformed
 
     private void N1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_N1ActionPerformed
-        
+        if (N1.getBackground().equals(Color.BLUE)) {
+            N1.setBackground(null);
+        } else {
+            N1.setBackground(Color.BLUE);
+        }
     }//GEN-LAST:event_N1ActionPerformed
 
     private void N2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_N2ActionPerformed
-        
+        if (N2.getBackground().equals(Color.BLUE)) {
+            N2.setBackground(null);
+        } else {
+            N2.setBackground(Color.BLUE);
+        }
     }//GEN-LAST:event_N2ActionPerformed
 
     private void N4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_N4ActionPerformed
-        
+        if (N4.getBackground().equals(Color.BLUE)) {
+            N4.setBackground(null);
+        } else {
+            N4.setBackground(Color.BLUE);
+        }
     }//GEN-LAST:event_N4ActionPerformed
 
     private void N5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_N5ActionPerformed
-        
+        if (N5.getBackground().equals(Color.BLUE)) {
+            N5.setBackground(null);
+        } else {
+            N5.setBackground(Color.BLUE);
+        }
     }//GEN-LAST:event_N5ActionPerformed
 
     private void G1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_G1ActionPerformed
-        
+        if (G1.getBackground().equals(Color.BLUE)) {
+            G1.setBackground(null);
+        } else {
+            G1.setBackground(Color.BLUE);
+        }
     }//GEN-LAST:event_G1ActionPerformed
 
     private void G2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_G2ActionPerformed
-        
+        if (G2.getBackground().equals(Color.BLUE)) {
+            G2.setBackground(null);
+        } else {
+            G2.setBackground(Color.BLUE);
+        }
     }//GEN-LAST:event_G2ActionPerformed
 
     private void G3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_G3ActionPerformed
-        
+        if (G3.getBackground().equals(Color.BLUE)) {
+            G3.setBackground(null);
+        } else {
+            G3.setBackground(Color.BLUE);
+        }
     }//GEN-LAST:event_G3ActionPerformed
 
     private void G4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_G4ActionPerformed
-        
+        if (G4.getBackground().equals(Color.BLUE)) {
+            G4.setBackground(null);
+        } else {
+            G4.setBackground(Color.BLUE);
+        }
     }//GEN-LAST:event_G4ActionPerformed
 
     private void G5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_G5ActionPerformed
-        
+        if (G5.getBackground().equals(Color.BLUE)) {
+            G5.setBackground(null);
+        } else {
+            G5.setBackground(Color.BLUE);
+        }
     }//GEN-LAST:event_G5ActionPerformed
 
     private void O1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_O1ActionPerformed
-        
+        if (O1.getBackground().equals(Color.BLUE)) {
+            O1.setBackground(null);
+        } else {
+            O1.setBackground(Color.BLUE);
+        }
     }//GEN-LAST:event_O1ActionPerformed
 
     private void O2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_O2ActionPerformed
-        
+        if (O2.getBackground().equals(Color.BLUE)) {
+            O2.setBackground(null);
+        } else {
+            O2.setBackground(Color.BLUE);
+        }
     }//GEN-LAST:event_O2ActionPerformed
 
     private void O3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_O3ActionPerformed
-        
+        if (O3.getBackground().equals(Color.BLUE)) {
+            O3.setBackground(null);
+        } else {
+            O3.setBackground(Color.BLUE);
+        }
     }//GEN-LAST:event_O3ActionPerformed
 
     private void O4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_O4ActionPerformed
-        
+        if (O4.getBackground().equals(Color.BLUE)) {
+            O4.setBackground(null);
+        } else {
+            O4.setBackground(Color.BLUE);
+        }
     }//GEN-LAST:event_O4ActionPerformed
 
     private void O5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_O5ActionPerformed
-        
+        if (O5.getBackground().equals(Color.BLUE)) {
+            O5.setBackground(null);
+        } else {
+            O5.setBackground(Color.BLUE);
+        }
     }//GEN-LAST:event_O5ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToggleButton B1;
-    private javax.swing.JToggleButton B2;
-    private javax.swing.JToggleButton B3;
-    private javax.swing.JToggleButton B4;
-    private javax.swing.JToggleButton B5;
-    private javax.swing.JToggleButton G1;
-    private javax.swing.JToggleButton G2;
-    private javax.swing.JToggleButton G3;
-    private javax.swing.JToggleButton G4;
-    private javax.swing.JToggleButton G5;
-    private javax.swing.JToggleButton I1;
-    private javax.swing.JToggleButton I2;
-    private javax.swing.JToggleButton I3;
-    private javax.swing.JToggleButton I4;
-    private javax.swing.JToggleButton I5;
-    private javax.swing.JToggleButton N1;
-    private javax.swing.JToggleButton N2;
-    private javax.swing.JToggleButton N4;
-    private javax.swing.JToggleButton N5;
-    private javax.swing.JToggleButton O1;
-    private javax.swing.JToggleButton O2;
-    private javax.swing.JToggleButton O3;
-    private javax.swing.JToggleButton O4;
-    private javax.swing.JToggleButton O5;
+    private javax.swing.JButton B1;
+    private javax.swing.JButton B2;
+    private javax.swing.JButton B3;
+    private javax.swing.JButton B4;
+    private javax.swing.JButton B5;
+    private javax.swing.JButton G1;
+    private javax.swing.JButton G2;
+    private javax.swing.JButton G3;
+    private javax.swing.JButton G4;
+    private javax.swing.JButton G5;
+    private javax.swing.JButton I1;
+    private javax.swing.JButton I2;
+    private javax.swing.JButton I3;
+    private javax.swing.JButton I4;
+    private javax.swing.JButton I5;
+    private javax.swing.JButton N1;
+    private javax.swing.JButton N2;
+    private javax.swing.JButton N4;
+    private javax.swing.JButton N5;
+    private javax.swing.JButton O1;
+    private javax.swing.JButton O2;
+    private javax.swing.JButton O3;
+    private javax.swing.JButton O4;
+    private javax.swing.JButton O5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JToggleButton papacapim;
+    private javax.swing.JButton papacapim;
     // End of variables declaration//GEN-END:variables
 }
