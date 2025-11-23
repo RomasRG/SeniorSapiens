@@ -11,21 +11,32 @@ public class TelaSorteio extends JFrame {
     private JTextArea txtNumerosSorteados;
     private JScrollPane scrollPane;
     private JLabel lblContador;
+    private SorteioBingo logicaSorteioBingo;
     
     // Controle do jogo
-    private SorteioBingo sorteioBingo;
     private List<String> historicoSorteios;
     private static final int MAX_NUMEROS = 75;
 
-    public TelaSorteio() {
+    public TelaSorteio(SorteioBingo logicaSorteioBingo) {
+        this.logicaSorteioBingo = logicaSorteioBingo;
         initComponents();
         inicializarJogo();
     }
 
     private void initComponents() {
         setTitle("Sorteador de Bingo - B.I.N.G.O");
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         setLayout(new BorderLayout(10, 10));
+
+        addWindowListener(new java.awt.event.WindowAdapter() {
+
+        public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+
+        GerenciadorDeSom.tocarClique();
+        dispose();
+        logicaSorteioBingo.finalizar();
+
+        }});
         
         JPanel painelSuperior = new JPanel(new BorderLayout());
         painelSuperior.setBorder(BorderFactory.createEmptyBorder(10, 10, 5, 10));
@@ -94,7 +105,6 @@ public class TelaSorteio extends JFrame {
     }
     
     private void inicializarJogo() {
-        sorteioBingo = new SorteioBingo();
         historicoSorteios = new ArrayList<>();
         
         lblUltimoNumero.setText("-");
@@ -104,7 +114,7 @@ public class TelaSorteio extends JFrame {
     }
     
     private void sortearNumero() {
-        String numeroSorteado = sorteioBingo.sortearNumero();
+        String numeroSorteado = logicaSorteioBingo.sortearNumero();
         
         if (numeroSorteado == null) {
             JOptionPane.showMessageDialog(this, 
@@ -132,7 +142,7 @@ public class TelaSorteio extends JFrame {
         }
         
         // Atualizar contador
-        int qtd = sorteioBingo.quantidadeSorteados();
+        int qtd = logicaSorteioBingo.quantidadeSorteados();
         lblContador.setText("Sorteados: " + qtd + "/" + MAX_NUMEROS);
         
         // Atualizar lista

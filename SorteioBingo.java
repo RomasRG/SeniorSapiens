@@ -6,10 +6,13 @@ class SorteioBingo {
     private Random random;
     private String numero;
     private Set<Integer> sorteados;
+    private Main mainApp;
 
     public SorteioBingo() {
+
         random = new Random();
         sorteados = new HashSet<>();
+
     }
 
     public String sortearNumero(){
@@ -50,5 +53,27 @@ class SorteioBingo {
 
     public Set<Integer> getSorteados() {
         return new HashSet<>(sorteados);
+    }
+
+    public void setMainApp(Main main){
+
+        this.mainApp = main;
+
+    }
+
+    public void finalizar(){
+
+        if(mainApp != null){
+
+            mainApp.exibirMenuPrincipal();
+
+        }
+
+    }
+
+    public void iniciar(){
+
+        new TelaSorteio(this).setVisible(true);
+        
     }
 }
